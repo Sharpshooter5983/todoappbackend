@@ -15,9 +15,8 @@ public class TaskList implements Serializable {
 
     @Column(nullable = false)
     private String listName;
-
-    @OneToMany(mappedBy = "taskList", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
+    @OneToMany(mappedBy = "taskList", cascade = CascadeType.ALL, orphanRemoval = true)
 
     private List<Task> tasks;
 
